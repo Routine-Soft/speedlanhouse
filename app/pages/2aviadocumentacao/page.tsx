@@ -1,0 +1,349 @@
+"use client";
+
+import React from "react";
+import { useState } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { 
+  Printer, 
+  FileText, 
+  Image as ImageIcon, 
+  Copy, 
+  FileBadge 
+} from "lucide-react";
+
+type Servico = {
+  nome: string;
+  descricao: string;
+  icon?: React.ReactNode;
+};
+
+const servicos: Servico[] = [
+  {
+    nome: "Xerox Preto & Branco e Colorido",
+    descricao: "Cópias rápidas e nítidas para documentos em geral.",
+    icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
+  },
+  {
+    nome: "Impressão Preto & Branco e Colorido",
+    descricao: "Impressão de arquivos PDF, Word, contratos e documentos.",
+    icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
+  },
+  {
+    nome: "Impressão Certificado - OffSET 180g",
+    descricao: "Ideal para certificados, convites e documentos especiais.",
+    icon: <Image src="/img/certificado.png" alt="Xerox" width={150} height={40} />,
+  },
+  {
+    nome: "Impressão De Fotografia",
+    descricao: "Alta qualidade para fotos e artes.",
+    icon: <Image src="/img/fotografia.png" alt="Xerox" width={150} height={40} />,
+  },
+  {
+    nome: "Impressão de Adesivo",
+    descricao: "Perfeito para etiquetas e personalizações.",
+    icon: <Image src="/img/adesivo.png" alt="Xerox" width={150} height={40} />,
+  },
+  {
+    nome: "FOTO 3/4 - 6 FOTOS",
+    descricao: "Perfeito para etiquetas e personalizações.",
+    icon: <Image src="/img/34.png" alt="Xerox" width={150} height={40} />,
+  },
+];
+
+export default function ImpressaoPage() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-orange-400 to-orange-900">
+
+            {/* HERO */}
+      <section className="relative w-full bg-gradient-to-r from-purple-700 via-purple-600 to-orange-500 text-white">
+
+        {/* NAVBAR */}
+        <header className="max-w-7xl mx-auto px-6 py-6">
+          <div className="flex items-center justify-between">
+
+            {/* LOGO */}
+            <div className="flex items-center gap-3">
+              <Image
+                src="/img/logo.png"
+                alt="SpeedLan House"
+                width={100}
+                height={70}
+              />
+              <div className="text-2xl font-bold tracking-wide">
+                SPEEDLAN <span className="text-orange-300">HOUSE</span>
+              </div>
+            </div>
+
+            {/* BOTÃO HAMBÚRGUER (MOBILE) */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden flex flex-col gap-1"
+              aria-label="Abrir Menu"
+            >
+              <span className="w-6 h-0.5 bg-white"></span>
+              <span className="w-6 h-0.5 bg-white"></span>
+              <span className="w-6 h-0.5 bg-white"></span>
+            </button>
+
+            {/* MENU DESKTOP */}
+            <nav className="hidden md:flex items-center gap-8 text-lg">
+              <Link href="#" className="hover:text-orange-300 transition">Início</Link>
+              <Link href="#" className="hover:text-orange-300 transition">Serviços</Link>
+              <Link href="#" className="hover:text-orange-300 transition">Contato</Link>
+              <a 
+                href="https://wa.me/5521992013095?text=Eu%20quero%20contratar%20um%20servi%C3%A7o."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-indigo-900 hover:bg-indigo-800 px-5 py-2 rounded-lg shadow-md transition"
+              >
+                Solicite seu orçamento
+              </a>
+            </nav>
+          </div>
+
+          {/* MENU MOBILE */}
+          {menuOpen && (
+            <nav className="md:hidden mt-6 flex flex-col gap-4 text-lg bg-white text-indigo-800 p-6 rounded-xl shadow-lg">
+              <Link href="#" onClick={() => setMenuOpen(false)}>Início</Link>
+              <Link href="#" onClick={() => setMenuOpen(false)}>Serviços</Link>
+              <Link href="#" onClick={() => setMenuOpen(false)}>Contato</Link>
+
+              <a 
+                href="https://wa.me/5521992013095?text=Eu%20quero%20contratar%20um%20servi%C3%A7o."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-indigo-900 text-white px-5 py-2 rounded-lg shadow-md text-center"
+              >
+                Solicite seu orçamento
+              </a>
+            </nav>
+          )}
+        </header>
+
+        {/* HERO CONTENT */}
+        <div className="max-w-4xl mx-auto text-center px-6 py-16">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">
+            Xerox e Impressões Rápidas e Profissionais
+          </h1>
+          <p className="text-1xl md:text-xl mb-2">
+            Xerox e impressões profissionais com qualidade impecável em qualquer papel ou gramatura — do sulfite ao fotográfico, adesivo ou certificado — garantindo cores vivas, definição nítida e um acabamento que transmite credibilidade em cada detalhe.
+          </p>
+
+        <a
+          href="https://wa.me/5521992013095?text=Eu%20quero%20contratar%20um%20servi%C3%A7o."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-400 px-8 py-4 text-xl rounded-lg font-semibold shadow-lg transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 32 32"
+            className="w-8 h-8"
+          >
+            {/* BALÃO VERDE */}
+            <path
+              fill="#25D366"
+              d="M16.001 3C8.82 3 3 8.82 3 16c0 2.828.92 5.437 2.477 7.555L3 29l5.62-2.42A12.94 12.94 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3z"
+            />
+
+            {/* TELEFONE BRANCO */}
+            <path
+              fill="#ffffff"
+              d="M21.756 18.818c-.314-.157-1.86-.918-2.148-1.023-.288-.105-.497-.157-.707.157-.21.314-.812 1.023-.995 1.233-.183.21-.366.236-.68.078-.314-.157-1.325-.488-2.524-1.556-.932-.83-1.56-1.856-1.743-2.17-.183-.314-.02-.483.138-.64.142-.141.314-.366.471-.55.157-.183.21-.314.314-.523.105-.21.052-.393-.026-.55-.078-.157-.707-1.705-.969-2.34-.255-.612-.515-.53-.707-.54l-.602-.01c-.21 0-.55.078-.838.393s-1.1 1.076-1.1 2.625c0 1.55 1.126 3.05 1.283 3.26.157.21 2.217 3.387 5.374 4.748.75.324 1.335.518 1.79.663.752.24 1.437.206 1.978.125.603-.09 1.86-.76 2.123-1.495.262-.734.262-1.364.183-1.495-.078-.13-.288-.21-.602-.367z"
+            />
+          </svg>
+
+          Chamar no WhatsApp
+        </a>
+        </div>
+      </section>
+
+      {/* BENEFÍCIOS */}
+      <section className="bg-indigo-800 text-white py-4">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-center gap-8 text-center font-medium">
+          <div>10 anos transformando burocracia em soluções</div>
+        </div>
+      </section>
+
+      {/* SERVIÇOS */}
+      <section className="py-20 px-6 max-w-7xl mx-auto">
+        <h2 className="text-3xl font-bold text-center text-indigo-800 mb-14">
+          Nossos Serviços
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {servicos.map((servico, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-xl p-6 text-center hover:shadow-2xl transition"
+            >
+              {/* ÍCONE */}
+              <div className="flex justify-center mb-4">
+                {servico.icon}
+              </div>
+
+              <h3 className="text-xl font-bold text-indigo-800 mb-4">
+                {servico.nome}
+              </h3>
+
+              <p className="text-gray-600 mb-6">
+                {servico.descricao}
+              </p>
+
+              <a
+                href={`https://wa.me/5521992013095?text=${encodeURIComponent(
+                  `Olá, quero o serviço: ${servico.nome}`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white px-5 py-2 rounded-lg shadow-md transition font-semibold"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 32 32"
+                  className="w-5 h-5 fill-white"
+                >
+                  <path d="M16.001 3C8.82 3 3 8.82 3 16c0 2.828.92 5.437 2.477 7.555L3 29l5.62-2.42A12.94 12.94 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.5a10.42 10.42 0 01-5.305-1.45l-.38-.22-3.335 1.437.71-3.25-.245-.39A10.42 10.42 0 015.5 16c0-5.79 4.71-10.5 10.5-10.5S26.5 10.21 26.5 16 21.79 26.5 16 26.5zm5.756-7.682c-.314-.157-1.86-.918-2.148-1.023-.288-.105-.497-.157-.707.157-.21.314-.812 1.023-.995 1.233-.183.21-.366.236-.68.078-.314-.157-1.325-.488-2.524-1.556-.932-.83-1.56-1.856-1.743-2.17-.183-.314-.02-.483.138-.64.142-.141.314-.366.471-.55.157-.183.21-.314.314-.523.105-.21.052-.393-.026-.55-.078-.157-.707-1.705-.969-2.34-.255-.612-.515-.53-.707-.54l-.602-.01c-.21 0-.55.078-.838.393s-1.1 1.076-1.1 2.625c0 1.55 1.126 3.05 1.283 3.26.157.21 2.217 3.387 5.374 4.748.75.324 1.335.518 1.79.663.752.24 1.437.206 1.978.125.603-.09 1.86-.76 2.123-1.495.262-.734.262-1.364.183-1.495-.078-.13-.288-.21-.602-.367z"/>
+                </svg>
+
+                Solicitar Serviço
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CHAMADA FINAL */}
+      <section className=" py-20 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+          <div>
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Precisa imprimir agora?
+            </h2>
+
+            <p className="text-white text-lg mb-8 leading-relaxed">
+              Envie seu arquivo pelo <span className="font-semibold text-green-600">WhatsApp </span> 
+              e retire pronto na unidade ou consulte valores rapidamente.
+            </p>
+
+            <ul className="space-y-4">
+              <li className="flex items-center gap-3 text-gray-700">
+                <div className="w-6 h-6 flex items-center justify-center bg-green-500 rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="w-4 h-4 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="font-medium text-white">Atendimento imediato</span>
+              </li>
+
+              <li className="flex items-center gap-3 text-gray-700">
+                <div className="w-6 h-6 flex items-center justify-center bg-green-500 rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="w-4 h-4 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="font-medium text-white">Unidade física para retirada</span>
+              </li>
+
+              <li className="flex items-center gap-3 text-gray-700">
+                <div className="w-6 h-6 flex items-center justify-center bg-green-500 rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="w-4 h-4 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="font-medium text-white">Serviço rápido e sem burocracia</span>
+              </li>
+            </ul>
+
+            {/* SOCIAL */}
+            <div className="flex gap-4 mt-6 justify-center md:justify-start">
+
+            {/* FACEBOOK */}
+            <a
+              href="https://www.facebook.com/profile.php?id=100054316684907"
+              target="_blank"
+              className="w-10 h-10 flex items-center justify-center bg-[#1877F2] rounded-lg hover:scale-105 transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="w-5 h-5 fill-white"
+              >
+                <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 10.997 10.125 11.927v-8.437H7.078v-3.49h3.047V9.413c0-3.007 1.793-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.514c-1.49 0-1.953.926-1.953 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.07 24 18.092 24 12.073z"/>
+              </svg>
+            </a>
+
+            {/* INSTAGRAM */}
+            <a
+              href="https://www.instagram.com/cs.speed_lan_house/"
+              target="_blank"
+              className="w-10 h-10 flex items-center justify-center bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 rounded-lg hover:scale-105 transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="w-5 h-5 fill-white"
+              >
+                <path d="M7.75 2C4.678 2 2 4.678 2 7.75v8.5C2 19.322 4.678 22 7.75 22h8.5C19.322 22 22 19.322 22 16.25v-8.5C22 4.678 19.322 2 16.25 2h-8.5zm0 2h8.5C18.216 4 20 5.784 20 7.75v8.5C20 18.216 18.216 20 16.25 20h-8.5C5.784 20 4 18.216 4 16.25v-8.5C4 5.784 5.784 4 7.75 4zm9.5 1.5a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/>
+              </svg>
+            </a>
+
+            {/* WHATSAPP */}
+            <a
+              href="https://wa.me/5521992013095"
+              target="_blank"
+              className="w-10 h-10 flex items-center justify-center bg-[#25D366] rounded-lg hover:scale-105 transition"
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 32 32"
+              className="w-6 h-6 fill-white"
+            >
+              <path d="M16.001 3C8.82 3 3 8.82 3 16c0 2.828.92 5.437 2.477 7.555L3 29l5.62-2.42A12.94 12.94 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.5a10.42 10.42 0 01-5.305-1.45l-.38-.22-3.335 1.437.71-3.25-.245-.39A10.42 10.42 0 015.5 16c0-5.79 4.71-10.5 10.5-10.5S26.5 10.21 26.5 16 21.79 26.5 16 26.5zm5.756-7.682c-.314-.157-1.86-.918-2.148-1.023-.288-.105-.497-.157-.707.157-.21.314-.812 1.023-.995 1.233-.183.21-.366.236-.68.078-.314-.157-1.325-.488-2.524-1.556-.932-.83-1.56-1.856-1.743-2.17-.183-.314-.02-.483.138-.64.142-.141.314-.366.471-.55.157-.183.21-.314.314-.523.105-.21.052-.393-.026-.55-.078-.157-.707-1.705-.969-2.34-.255-.612-.515-.53-.707-.54l-.602-.01c-.21 0-.55.078-.838.393s-1.1 1.076-1.1 2.625c0 1.55 1.126 3.05 1.283 3.26.157.21 2.217 3.387 5.374 4.748.75.324 1.335.518 1.79.663.752.24 1.437.206 1.978.125.603-.09 1.86-.76 2.123-1.495.262-.734.262-1.364.183-1.495-.078-.13-.288-.21-.602-.367z"/>
+            </svg>
+              </a>
+
+          </div>
+        </div>
+
+        {/* MAPA */}
+        <iframe
+          title="Mapa SpeedLan"
+          src="https://www.google.com/maps?q=23585430&output=embed"
+          className="w-full h-80 rounded-xl shadow-xl"
+          loading="lazy"
+        />
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-gray-900 text-white text-center py-6">
+        © 2026 Speed Lan House: Todos os direitos reservados.
+      </footer>
+    </div>
+  );
+}

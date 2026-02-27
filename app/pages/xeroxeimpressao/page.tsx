@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { 
@@ -20,56 +20,60 @@ type Servico = {
 
 const servicos: Servico[] = [
   {
-    nome: "Xerox Preto e Branco",
+    nome: "Xerox Preto & Branco e Colorido",
     descricao: "Cópias rápidas e nítidas para documentos em geral.",
-    icon: <Printer size={40} className="text-blue-600" />,
+    icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
   },
   {
-    nome: "Xerox Preto e Branco Ampliada",
-    descricao: "Ampliação de documentos com qualidade e nitidez.",
-    icon: <Printer size={40} className="text-blue-600" />,
-  },
-  {
-    nome: "Xerox Colorida",
-    descricao: "Cópias coloridas com excelente definição.",
-    icon: <Printer size={40} className="text-blue-600" />,
-  },
-  {
-    nome: "Xerox Colorida Ampliada",
-    descricao: "Cópias coloridas com excelente definição ampliada.",
-    icon:<Printer size={40} className="text-blue-600" />,
-  },
-  {
-    nome: "Impressão Preto e Branco",
+    nome: "Impressão Preto & Branco e Colorido",
     descricao: "Impressão de arquivos PDF, Word, contratos e documentos.",
-    icon: <Printer size={40} className="text-blue-600" />,
+    icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
   },
   {
-    nome: "Impressão Colorida",
-    descricao: "Impressão colorida com alta qualidade.",
-    icon: <Printer size={40} className="text-blue-600" />,
-  },
-  {
-    nome: "Impressão Offset 180g",
+    nome: "Impressão Certificado - OffSET 180g",
     descricao: "Ideal para certificados, convites e documentos especiais.",
-    icon: <FileBadge size={40} className="text-green-600" />,
+    icon: <Image src="/img/certificado.png" alt="Xerox" width={150} height={40} />,
   },
   {
-    nome: "Impressão Papel Fotográfico",
+    nome: "Impressão De Fotografia",
     descricao: "Alta qualidade para fotos e artes.",
-    icon: <ImageIcon size={40} className="text-yellow-600" />,
+    icon: <Image src="/img/fotografia.png" alt="Xerox" width={150} height={40} />,
   },
   {
-    nome: "Impressão Papel Fotográfico Personalizado",
+    nome: "Impressão de Adesivo",
     descricao: "Perfeito para etiquetas e personalizações.",
-    icon: <ImageIcon size={40} className="text-orange-600" />,
+    icon: <Image src="/img/adesivo.png" alt="Xerox" width={150} height={40} />,
+  },
+  {
+    nome: "FOTO 3/4 - 6 FOTOS",
+    descricao: "Perfeito para etiquetas e personalizações.",
+    icon: <Image src="/img/34.png" alt="Xerox" width={150} height={40} />,
   },
 ];
 
 export default function ImpressaoPage() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [emojiDevice, setEmojiDevice] = useState("💻");
+
+  React.useEffect(() => {
+  const userAgent = navigator.userAgent;
+
+  if (/mobile/i.test(userAgent)) {
+      setEmojiDevice("📱");
+    } else if (/tablet|ipad/i.test(userAgent)) {
+      setEmojiDevice("📲");
+    } else {
+      setEmojiDevice("💻");
+    }
+  }, []);
+
+  const criarMensagem = (servicoNome: string) => {
+    const mensagem = `Olá, Speed Lan House ${emojiDevice}. Quero o serviço: ${servicoNome}`;
+    return encodeURIComponent(mensagem);
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-200 to-purple-300">
+    <div className="min-h-screen bg-gradient-to-b from-orange-400 to-orange-900">
 
             {/* HERO */}
       <section className="relative w-full bg-gradient-to-r from-purple-700 via-purple-600 to-orange-500 text-white">
@@ -143,10 +147,7 @@ export default function ImpressaoPage() {
             Xerox e Impressões Rápidas e Profissionais
           </h1>
           <p className="text-1xl md:text-xl mb-2">
-            Somos uma empresa especializada em serviços essenciais para o dia a dia, há mais de 10 anos transformando burocracia em soluções rápidas, seguras e eficientes. Construímos nossa autoridade com o compromisso de resolver tudo em um único lugar como xerox, impressão, consultas completas, agendamentos, 2º via de documentos, currículos profissionais e serviços digitais. Entre em contato com nossa equipe que nós transformaremos seu problema em solução!
-          </p>
-          <p className="italic text-1xl md:text-xl mb-8">
-            Consultas, agendamentos, impressões e muito mais.
+            Xerox e impressões profissionais com qualidade impecável em qualquer papel ou gramatura — do sulfite ao fotográfico, adesivo ou certificado — garantindo cores vivas, definição nítida e um acabamento que transmite credibilidade em cada detalhe.
           </p>
 
         <a
@@ -178,6 +179,13 @@ export default function ImpressaoPage() {
         </div>
       </section>
 
+      {/* BENEFÍCIOS */}
+      <section className="bg-indigo-800 text-white py-4">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-center gap-8 text-center font-medium">
+          <div>10 anos transformando burocracia em soluções</div>
+        </div>
+      </section>
+
       {/* SERVIÇOS */}
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-indigo-800 mb-14">
@@ -186,6 +194,7 @@ export default function ImpressaoPage() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {servicos.map((servico, index) => (
+            
             <div
               key={index}
               className="bg-white rounded-xl shadow-xl p-6 text-center hover:shadow-2xl transition"
@@ -204,9 +213,7 @@ export default function ImpressaoPage() {
               </p>
 
               <a
-                href={`https://wa.me/5521992013095?text=${encodeURIComponent(
-                  `Olá, quero o serviço: ${servico.nome}`
-                )}`}
+                href={`https://wa.me/5521992013095?text=${criarMensagem(servico.nome)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white px-5 py-2 rounded-lg shadow-md transition font-semibold"
@@ -227,15 +234,15 @@ export default function ImpressaoPage() {
       </section>
 
       {/* CHAMADA FINAL */}
-      <section className="bg-purple-200 py-20 px-6">
+      <section className=" py-20 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
           <div>
-            <h2 className="text-3xl font-bold text-orange-600 mb-6">
+            <h2 className="text-3xl font-bold text-white mb-6">
               Precisa imprimir agora?
             </h2>
 
-            <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+            <p className="text-white text-lg mb-8 leading-relaxed">
               Envie seu arquivo pelo <span className="font-semibold text-green-600">WhatsApp </span> 
               e retire pronto na unidade ou consulte valores rapidamente.
             </p>
@@ -254,7 +261,7 @@ export default function ImpressaoPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="font-medium">Atendimento imediato</span>
+                <span className="font-medium text-white">Atendimento imediato</span>
               </li>
 
               <li className="flex items-center gap-3 text-gray-700">
@@ -270,7 +277,7 @@ export default function ImpressaoPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="font-medium">Unidade física para retirada</span>
+                <span className="font-medium text-white">Unidade física para retirada</span>
               </li>
 
               <li className="flex items-center gap-3 text-gray-700">
@@ -286,7 +293,7 @@ export default function ImpressaoPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <span className="font-medium">Serviço rápido e sem burocracia</span>
+                <span className="font-medium text-white">Serviço rápido e sem burocracia</span>
               </li>
             </ul>
 
@@ -352,9 +359,36 @@ export default function ImpressaoPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-purple-800 text-white text-center py-6">
+      <footer className="bg-gray-900 text-white text-center py-6">
         © 2026 Speed Lan House: Todos os direitos reservados.
       </footer>
+
+      <a
+  href={`https://wa.me/5521992013095?text=${encodeURIComponent(
+    "Olá, Speed Lan House. Eu preciso de ajuda."
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-6 right-6 group z-50"
+>
+  {/* Tooltip */}
+  <span className="absolute right-14 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition bg-white text-gray-800 text-sm px-3 py-1.5 rounded-md shadow-md whitespace-nowrap">
+    Em que posso ajudar?
+  </span>
+
+  {/* Botão igual ao seu */}
+  <div className="w-12 h-12 flex items-center justify-center bg-[#25D366] rounded-lg hover:scale-105 transition shadow-lg">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      className="w-6 h-6 fill-white"
+    >
+      <path d="M16.001 3C8.82 3 3 8.82 3 16c0 2.828.92 5.437 2.477 7.555L3 29l5.62-2.42A12.94 12.94 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.5a10.42 10.42 0 01-5.305-1.45l-.38-.22-3.335 1.437.71-3.25-.245-.39A10.42 10.42 0 015.5 16c0-5.79 4.71-10.5 10.5-10.5S26.5 10.21 26.5 16 21.79 26.5 16 26.5zm5.756-7.682c-.314-.157-1.86-.918-2.148-1.023-.288-.105-.497-.157-.707.157-.21.314-.812 1.023-.995 1.233-.183.21-.366.236-.68.078-.314-.157-1.325-.488-2.524-1.556-.932-.830-1.56-1.856-1.743-2.17-.183-.314-.02-.483.138-.64.142-.141.314-.366.471-.55.157-.183.21-.314.314-.523.105-.21.052-.393-.026-.55-.078-.157-.707-1.705-.969-2.34-.255-.612-.515-.53-.707-.54l-.602-.01c-.21 0-.55.078-.838.393s-1.1 1.076-1.1 2.625c0 1.55 1.126 3.05 1.283 3.26.157.21 2.217 3.387 5.374 4.748.75.324 1.335.518 1.79.663.752.24 1.437.206 1.978.125.603-.09 1.86-.76 2.123-1.495.262-.734.262-1.364.183-1.495-.078-.13-.288-.21-.602-.367z"/>
+    </svg>
+  </div>
+</a>
+      
     </div>
+    
   );
 }
