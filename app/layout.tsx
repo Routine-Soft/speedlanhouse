@@ -15,30 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Speed Lan House",
   description: "Serviços de informática, consultas, agendamentos e muito mais.",
-
-  openGraph: {
-    title: "Speed Lan House",
-    description: "Serviços de informática, consultas, agendamentos e muito mais.",
-    url: "https://seudominio.com.br",
-    siteName: "Speed Lan House",
-    images: [
-      {
-        url: "",
-        width: 1200,
-        height: 630,
-        alt: "Speed Lan House",
-      },
-    ],
-    locale: "pt_BR",
-    type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Speed Lan House",
-    description: "Serviços de informática, consultas e agendamentos.",
-    images: [""],
-  },
 };
 
 export default function RootLayout({
