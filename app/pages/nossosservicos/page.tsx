@@ -20,35 +20,279 @@ type Servico = {
 
 const servicos: Servico[] = [
   {
-    nome: "Xerox Preto & Branco e Colorido",
-    descricao: "Cópias rápidas e nítidas para documentos em geral.",
-    icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
-  },
-  {
-    nome: "Impressão Preto & Branco e Colorido",
-    descricao: "Impressão de arquivos PDF, Word, contratos e documentos.",
-    icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
-  },
-  {
-    nome: "Impressão Certificado - OffSET 180g",
-    descricao: "Ideal para certificados, convites e documentos especiais.",
-    icon: <Image src="/img/certificado.png" alt="Xerox" width={150} height={40} />,
-  },
-  {
-    nome: "Impressão De Fotografia",
-    descricao: "Impressão de fotos em alta qualidade.",
-    icon: <Image src="/img/fotografia.png" alt="Xerox" width={150} height={40} />,
-  },
-  {
-    nome: "Impressão de Adesivo",
-    descricao: "Perfeito para etiquetas e embalagens de produtos.",
-    icon: <Image src="/img/adesivo.png" alt="Xerox" width={150} height={40} />,
-  },
-  {
-    nome: "FOTO 3/4 - 6 FOTOS",
-    descricao: "Perfeito para documentos que exigem fotos em tamanho 3/4.",
-    icon: <Image src="/img/34.png" alt="Xerox" width={150} height={40} />,
-  },
+      nome: "2a via de CPF",
+      descricao: "Emissão rápida e segura da 2ª via do CPF, ideal para quem perdeu ou teve o documento danificado.",
+      icon: <Image src="/img/2aviacpf.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "NADA CONSTA CPF",
+      descricao: "Impressão de Nada Constas do CPF, ideal para quem precisa comprovar que não há pendências.",
+      icon: <Image src="/img/nadaconstacpf.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "2a via de Titulo de Eleitor",
+      descricao: "Emissão rápida e segura da 2ª via do título de eleitor.",
+      icon: <Image src="/img/2viaeleitor.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "NADA CONSTA CNH",
+      descricao: "Impressão de Nada Constas da CNH, ideal para quem precisa comprovar que não há pendências.",
+      icon: <Image src="/img/nadaconstacnh.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "NADA CONSTA VEÍCULO",
+      descricao: "Impressão de Nada Constas do veículo, ideal para quem precisa comprovar que não há pendências.",
+      icon: <Image src="/img/nadaconstaveiculo.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Certidão de Antecedentes Criminais PF",
+      descricao: "Certidão de antecedentes criminais para pessoa física, ideal para quem precisa comprovar que não há antecedentes criminais.",
+      icon: <Image src="/img/antecedentescriminais.png" alt="Xerox" width={200} height={40} />,
+    },
+      {
+      nome: "Certidão de Antecedentes INTEIRO TEOR PC",
+      descricao: "Certidão de antecedentes inteiro teor para pessoa física, ideal para quem precisa comprovar que não há antecedentes criminais.",
+      icon: <Image src="/img/certidaointeiro.jpg" alt="Xerox" width={150} height={40} />,
+    },
+      {
+      nome: "Certidão de Crime Eleitoral",
+      descricao: "Certidão de antecedentes criminais para pessoa física, ideal para quem precisa comprovar que não há antecedentes criminais relacionados a crimes eleitorais.",
+      icon: <Image src="/img/certidaocrimeeleitoral.png" alt="Xerox" width={200} height={40} />,
+    },
+      {
+      nome: "Certidão de Quitação Eleitoral",
+      descricao: "Certidão de quitação eleitoral, ideal para quem precisa comprovar que não há pendências eleitorais.",
+      icon: <Image src="/img/certidaoquitacaoeleitoral.jpg" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "DETRAN IDENTIDADE/CNH",
+      descricao: "Agendamento para emissão de 2ª via de identidade e CNH, garantindo praticidade e segurança para você resolver tudo em um só lugar.",
+      icon: <Image src="/img/detran.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "INSS",
+      descricao: "Agendamento INSS.",
+      icon: <Image src="/img/inss.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Receita Federal",
+      descricao: "Agendamento para emissão de 2ª via do título de eleitor.",
+      icon: <Image src="/img/receitafederal.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Auxílio Desemprego",
+      descricao: "Agendamento para solicitação de auxílio desemprego.",
+      icon: <Image src="/img/auxiliodesemprego.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Policia Federal",
+      descricao: "Agendamento para emissão de passaporte e outros serviços relacionados à Polícia Federal.",
+      icon: <Image src="/img/antecedentescriminais.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "CADRIO - CRAS",
+      descricao: "Agendamento para inscrição no Cadastro Único (CADÚnico) e outros serviços relacionados ao CRAS, facilitando o acesso a benefícios sociais e programas governamentais.",
+      icon: <Image src="/img/cadunico.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "SPC/SERASA",
+      descricao: "Consulta ao SPC e Serasa para CPF ou CNPJ, ideal para quem precisa verificar restrições financeiras, dívidas, protestos e ações judiciais.",
+      icon: <Image src="/img/serasa.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "INSS",
+      descricao: "Emissão de extrato do INSS, ideal para quem precisa comprovar contribuições previdenciárias ou verificar o histórico de benefícios.",
+      icon: <Image src="/img/inss.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Rio Previdência",
+      descricao: "Emissão de extrato do Rio Previdência, ideal para quem precisa comprovar contribuições previdenciárias ou verificar o histórico de benefícios para servidores públicos do Rio de Janeiro.",
+      icon: <Image src="/img/rioprevidencia.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "GOV",
+      descricao: "Emissão de certidões e documentos oficiais, ideal para quem precisa de comprovações para processos judiciais, administrativos ou pessoais.",
+      icon: <Image src="/img/gov.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Emissão de DUDA",
+      descricao: "Consulta e emissão de DUDA (Documento Único de Débitos Automotivos).",
+      icon: <Image src="/img/duda.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Emissão de GRT",
+      descricao: "Emissão de GRT (Guia de Recolhimento do Detran) para regularização de veículos.",
+      icon: <Image src="/img/duda.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Emissão de IPVA",
+      descricao: "Emissão rápida e segura do IPVA.",
+      icon: <Image src="/img/duda.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Emissão de MULTAS",
+      descricao: "Impressão de multas do veículo.",
+      icon: <Image src="/img/duda.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Impressão de CRLV",
+      descricao: "Impressão de CRLV (Certificado de Registro e Licenciamento de Veículo), ideal para quem precisa comprovar que o veículo está licenciado.",
+      icon: <Image src="/img/crlv.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Emissão de ATPV-E",
+      descricao: "Emissão de ATPV-e (Autorização para Transferência de Propriedade de Veículo), ideal para quem precisa transferir a propriedade do veículo.",
+      icon: <Image src="/img/duda.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "SCANNER / DIGITAÇÃO",
+      descricao: "Digitalização de documentos, fotos e arquivos em alta qualidade.",
+      icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "CURRÍCULO PROFISSIONAL",
+      descricao: "Desenvolvimento de currículos estratégicos para destacar suas habilidades e experiências.",
+      icon: <Image src="/img/curriculo.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Digitação de Documentos Simples",
+      descricao: "Transformamos seus documentos manuscritos ou digitalizados em arquivos digitais editáveis.",
+      icon: <Image src="/img/doc.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Digitação de Documentos Personalizados",
+      descricao: "Transformamos seus documentos manuscritos ou digitalizados em arquivos digitais editáveis com formatação profissional.",
+      icon: <Image src="/img/doc.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Contratos de Compra e Venda",
+      descricao: "Perfeito para contratos de locação, compra e venda ou prestação de serviços com segurança e organização.",
+      icon: <Image src="/img/doc.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Xerox Preto & Branco e Colorido",
+      descricao: "Cópias rápidas e nítidas para documentos em geral.",
+      icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Impressão Preto & Branco e Colorido",
+      descricao: "Impressão de arquivos PDF, Word, contratos e documentos.",
+      icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Impressão Certificado - OffSET 180g",
+      descricao: "Ideal para certificados, convites e documentos especiais.",
+      icon: <Image src="/img/certificado.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Impressão De Fotografia",
+      descricao: "Impressão de fotos em alta qualidade.",
+      icon: <Image src="/img/fotografia.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Impressão de Adesivo",
+      descricao: "Perfeito para etiquetas e embalagens de produtos.",
+      icon: <Image src="/img/adesivo.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "FOTO 3/4 - 6 FOTOS",
+      descricao: "Perfeito para documentos que exigem fotos em tamanho 3/4.",
+      icon: <Image src="/img/34.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Impressão MEI/Bombeiro",
+      descricao: "Perfeito para documentos que exigem impressão de MEI ou Bombeiro.",
+      icon: <Image src="/img/gov.png" alt="Xerox" width={150} height={40} />,
+    },
+
+    {
+      nome: "Criação de conta GOV",
+      descricao: "Criação de conta no governo federal para acesso a serviços online.",
+      icon: <Image src="/img/gov.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Recuperação de conta GOV",
+      descricao: "Recuperação de conta no governo federal para acesso a serviços online.",
+      icon: <Image src="/img/gov.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Incrições Escolares/concursos/empregos",
+      descricao: "Perfeito para documentos que exigem fotos em tamanho 3/4.",
+      icon: <Image src="/img/inscricao.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Boletim de Ocorrência",
+      descricao: "Emissão de boletim de ocorrência para registro de incidentes e ocorrências policiais.",
+      icon: <Image src="/img/antecedentescriminais.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Encadernação",
+      descricao: "Perfeito para documentos que exigem encadernação profissional.",
+      icon: <Image src="/img/encadernacao.png" alt="Xerox" width={200} height={40} />,
+    },
+    {
+      nome: "Plastificação",
+      descricao: "Perfeito para documentos que exigem plastificação profissional.",
+      icon: <Image src="/img/plastificacao.png" alt="Xerox" width={200} height={40} />,
+    },
+
+    {
+      nome: "Formatação de Computadores",
+      descricao: "Formatação completa de computadores para restaurar o sistema operacional e configurar o ambiente.",
+      icon: <Image src="/img/formatacao.png" alt="Xerox" width={250} height={40} />,
+    },
+    {
+      nome: "Instalação Pacote Office",
+      descricao: "Instalação de pacote Office completo em computadores.",
+      icon: <Image src="/img/office.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Instalação de Impressora",
+      descricao: "Instalação de impressora em computadores.",
+      icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Recarga 4 Cores Impressora Epson",
+      descricao: "Recarga de cartuchos de impressora Epson com 4 cores.",
+      icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Retirar Arquivo de CD",
+      descricao: "Retirada de arquivos de CD para transferência em computadores.",
+      icon: <Image src="/img/cd.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Colocar/Retirar Arquivo de Pendrive",
+      descricao: "Colocar ou retirar arquivos de pendrive para transferência em computadores.",
+      icon: <Image src="/img/pendrive.png" alt="Xerox" width={150} height={40} />,
+    },
+
+    {
+      nome: "Topo de Bolo",
+      descricao: "Criação de topo de bolo para eventos e comemorações.",
+      icon: <Image src="/img/topobolo.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Envio de Emails",
+      descricao: "Envio de emails para clientes e usuários.",
+      icon: <Image src="/img/email.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Emitir Nota Fiscal",
+      descricao: "Emissão de nota fiscal para serviços prestados.",
+      icon: <Image src="/img/notafiscal.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Cadastro de Nota Fiscal",
+      descricao: "Cadastro de nota fiscal para serviços prestados.",
+      icon: <Image src="/img/notafiscal.png" alt="Xerox" width={150} height={40} />,
+    },
+    {
+      nome: "Placa Pix Acrílico Personalizada",
+      descricao: "Criação de placa Pix acrílico personalizada para eventos e comemorações.",
+      icon: <Image src="/img/placapix.png" alt="Xerox" width={150} height={40} />,
+    },
+
 ];
 
 export default function ImpressaoPage() {
@@ -144,10 +388,10 @@ export default function ImpressaoPage() {
         {/* HERO CONTENT */}
         <div className="max-w-4xl mx-auto text-center px-6 py-16">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            Xerox e Impressões Rápidas e Profissionais
+            TODOS OS NOSSOS SERVIÇOS
           </h1>
           <p className="text-1xl md:text-xl mb-2">
-            Xerox e impressões profissionais com qualidade impecável em qualquer papel ou gramatura — do sulfite ao fotográfico, adesivo ou certificado — garantindo cores vivas, definição nítida e um acabamento que transmite credibilidade em cada detalhe.
+            Conheça todos os nossos serviços e tenha a praticidade de resolver tudo em um único lugar. Reunimos soluções completas em documentação, consultas, agendamentos, digitação e muito mais, com agilidade, segurança e atendimento profissional. Mais comodidade para você, menos burocracia no seu dia a dia.
           </p>
 
         <a

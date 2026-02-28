@@ -42,9 +42,11 @@ export default function Home() {
 
             {/* MENU DESKTOP */}
             <nav className="hidden md:flex items-center gap-8 text-lg">
-              <Link href="#" className="hover:text-orange-300 transition">Início</Link>
-              <Link href="#" className="hover:text-orange-300 transition">Serviços</Link>
-              <Link href="#" className="hover:text-orange-300 transition">Contato</Link>
+              <Link href="/" className="hover:text-orange-300 transition">Início</Link>
+              <Link href="/pages/nossosservicos" className="hover:text-orange-300 transition">Nossos Serviços</Link>
+
+
+
               <a 
                 href="https://wa.me/5521992013095?text=Eu%20quero%20contratar%20um%20servi%C3%A7o."
                 target="_blank"
@@ -59,9 +61,9 @@ export default function Home() {
           {/* MENU MOBILE */}
           {menuOpen && (
             <nav className="md:hidden mt-6 flex flex-col gap-4 text-lg bg-white text-indigo-800 p-6 rounded-xl shadow-lg">
-              <Link href="#" onClick={() => setMenuOpen(false)}>Início</Link>
-              <Link href="#" onClick={() => setMenuOpen(false)}>Serviços</Link>
-              <Link href="#" onClick={() => setMenuOpen(false)}>Contato</Link>
+              <Link href="/" onClick={() => setMenuOpen(false)} className="hover:text-indigo-600 transition">Início</Link>
+              <Link href="/servicos" onClick={() => setMenuOpen(false)} className="hover:text-indigo-600 transition">Serviços</Link>
+              <Link href="/contato" onClick={() => setMenuOpen(false)} className="hover:text-indigo-600 transition">Contato</Link>
 
               <a 
                 href="https://wa.me/5521992013095?text=Eu%20quero%20contratar%20um%20servi%C3%A7o."
@@ -137,6 +139,7 @@ export default function Home() {
         {
           title: 'Consulta SPC / Serasa',
           desc: 'Verificação de crédito.',
+          link: '/pages/consultas',
           icon: (
             <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <circle cx="11" cy="11" r="7" />
@@ -147,6 +150,7 @@ export default function Home() {
         {
           title: 'Agendamentos',
           desc: 'INSS, Detran, e outros.',
+          link: '/pages/agendamentos',
           icon: (
             <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <rect x="3" y="4" width="18" height="18" rx="2" />
@@ -159,6 +163,7 @@ export default function Home() {
         {
           title: 'Digitação de Documentos',
           desc: 'Contratos, declarações...',
+          link: '/pages/digitacaodocumentos',
           icon: (
             <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path d="M4 3h12l4 4v14H4z" />
@@ -171,6 +176,7 @@ export default function Home() {
         {
           title: 'Currículos Profissionais',
           desc: 'Elaboração e formatação.',
+          link: '/pages/digitacaodocumentos',
           icon: (
             <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path d="M6 2h9l5 5v15H6z" />
@@ -179,8 +185,9 @@ export default function Home() {
           ),
         },
                 {
-          title: 'Currículos Profissionais',
-          desc: 'Elaboração e formatação.',
+          title: 'Todos os Serviços',
+          desc: 'Ver todos os serviços disponíveis.',
+          link: '/pages/nossosservicos',
           icon: (
             <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path d="M6 2h9l5 5v15H6z" />
@@ -189,9 +196,10 @@ export default function Home() {
           ),
         },
       ].map((service, i) => (
-        <div
+        <Link
           key={i}
-          className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-xl transition"
+          href={service.link}
+          className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-xl hover:-translate-y-1 transition block cursor-pointer"
         >
           <div className="flex justify-center mb-4">
             {service.icon}
@@ -204,7 +212,7 @@ export default function Home() {
           <p className="text-gray-600 text-sm">
             {service.desc}
           </p>
-        </div>
+        </Link>
       ))}
     </div>
         </div>

@@ -20,34 +20,34 @@ type Servico = {
 
 const servicos: Servico[] = [
   {
-    nome: "Xerox Preto & Branco e Colorido",
-    descricao: "Cópias rápidas e nítidas para documentos em geral.",
-    icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
+    nome: "Emissão de DUDA",
+    descricao: "Consulta e emissão de DUDA (Documento Único de Débitos Automotivos).",
+    icon: <Image src="/img/duda.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "Impressão Preto & Branco e Colorido",
-    descricao: "Impressão de arquivos PDF, Word, contratos e documentos.",
-    icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
+    nome: "Emissão de GRT",
+    descricao: "Emissão de GRT (Guia de Recolhimento do Detran) para regularização de veículos.",
+    icon: <Image src="/img/duda.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "Impressão Certificado - OffSET 180g",
-    descricao: "Ideal para certificados, convites e documentos especiais.",
-    icon: <Image src="/img/certificado.png" alt="Xerox" width={150} height={40} />,
+    nome: "Emissão de IPVA",
+    descricao: "Emissão rápida e segura do IPVA.",
+    icon: <Image src="/img/duda.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "Impressão De Fotografia",
-    descricao: "Impressão de fotos em alta qualidade.",
-    icon: <Image src="/img/fotografia.png" alt="Xerox" width={150} height={40} />,
+    nome: "Emissão de MULTAS",
+    descricao: "Impressão de multas do veículo.",
+    icon: <Image src="/img/duda.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "Impressão de Adesivo",
-    descricao: "Perfeito para etiquetas e embalagens de produtos.",
-    icon: <Image src="/img/adesivo.png" alt="Xerox" width={150} height={40} />,
+    nome: "Impressão de CRLV",
+    descricao: "Impressão de CRLV (Certificado de Registro e Licenciamento de Veículo), ideal para quem precisa comprovar que o veículo está licenciado.",
+    icon: <Image src="/img/crlv.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "FOTO 3/4 - 6 FOTOS",
-    descricao: "Perfeito para documentos que exigem fotos em tamanho 3/4.",
-    icon: <Image src="/img/34.png" alt="Xerox" width={150} height={40} />,
+    nome: "Emissão de ATPV-E",
+    descricao: "Emissão de ATPV-e (Autorização para Transferência de Propriedade de Veículo), ideal para quem precisa transferir a propriedade do veículo.",
+    icon: <Image src="/img/duda.png" alt="Xerox" width={200} height={40} />,
   },
 ];
 
@@ -144,10 +144,10 @@ export default function ImpressaoPage() {
         {/* HERO CONTENT */}
         <div className="max-w-4xl mx-auto text-center px-6 py-16">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            Xerox e Impressões Rápidas e Profissionais
+            DETRAN
           </h1>
           <p className="text-1xl md:text-xl mb-2">
-            Xerox e impressões profissionais com qualidade impecável em qualquer papel ou gramatura — do sulfite ao fotográfico, adesivo ou certificado — garantindo cores vivas, definição nítida e um acabamento que transmite credibilidade em cada detalhe.
+            Resolva todas as pendências do seu veículo em um só lugar! Cuidamos de IPVA, GRT, multas, DUDA, CRLV, ATPV-e, vistoria e muito mais com agilidade, segurança e total suporte — evite complicações e deixe a parte burocrática com quem entende.
           </p>
 
         <a

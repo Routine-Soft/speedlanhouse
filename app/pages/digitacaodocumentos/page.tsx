@@ -20,34 +20,29 @@ type Servico = {
 
 const servicos: Servico[] = [
   {
-    nome: "Xerox Preto & Branco e Colorido",
-    descricao: "Cópias rápidas e nítidas para documentos em geral.",
+    nome: "SCANNER / DIGITAÇÃO",
+    descricao: "Digitalização de documentos, fotos e arquivos em alta qualidade.",
     icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
   },
   {
-    nome: "Impressão Preto & Branco e Colorido",
-    descricao: "Impressão de arquivos PDF, Word, contratos e documentos.",
-    icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
+    nome: "CURRÍCULO PROFISSIONAL",
+    descricao: "Desenvolvimento de currículos estratégicos para destacar suas habilidades e experiências.",
+    icon: <Image src="/img/curriculo.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "Impressão Certificado - OffSET 180g",
-    descricao: "Ideal para certificados, convites e documentos especiais.",
-    icon: <Image src="/img/certificado.png" alt="Xerox" width={150} height={40} />,
+    nome: "Digitação de Documentos Simples",
+    descricao: "Transformamos seus documentos manuscritos ou digitalizados em arquivos digitais editáveis.",
+    icon: <Image src="/img/doc.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "Impressão De Fotografia",
-    descricao: "Impressão de fotos em alta qualidade.",
-    icon: <Image src="/img/fotografia.png" alt="Xerox" width={150} height={40} />,
+    nome: "Digitação de Documentos Personalizados",
+    descricao: "Transformamos seus documentos manuscritos ou digitalizados em arquivos digitais editáveis com formatação profissional.",
+    icon: <Image src="/img/doc.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "Impressão de Adesivo",
-    descricao: "Perfeito para etiquetas e embalagens de produtos.",
-    icon: <Image src="/img/adesivo.png" alt="Xerox" width={150} height={40} />,
-  },
-  {
-    nome: "FOTO 3/4 - 6 FOTOS",
-    descricao: "Perfeito para documentos que exigem fotos em tamanho 3/4.",
-    icon: <Image src="/img/34.png" alt="Xerox" width={150} height={40} />,
+    nome: "Contratos de Compra e Venda",
+    descricao: "Perfeito para contratos de locação, compra e venda ou prestação de serviços com segurança e organização.",
+    icon: <Image src="/img/doc.png" alt="Xerox" width={200} height={40} />,
   },
 ];
 
@@ -144,10 +139,10 @@ export default function ImpressaoPage() {
         {/* HERO CONTENT */}
         <div className="max-w-4xl mx-auto text-center px-6 py-16">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            Xerox e Impressões Rápidas e Profissionais
+            DIGITAÇÃO DE DOCUMENTOS
           </h1>
           <p className="text-1xl md:text-xl mb-2">
-            Xerox e impressões profissionais com qualidade impecável em qualquer papel ou gramatura — do sulfite ao fotográfico, adesivo ou certificado — garantindo cores vivas, definição nítida e um acabamento que transmite credibilidade em cada detalhe.
+            Desenvolvemos currículos e contratos profissionais estratégicos, estruturados conforme as exigências do mercado e redigidos com clareza e precisão. Criamos currículos que valorizam seu perfil competitivo e contratos de locação, compra e venda ou prestação de serviços com segurança e organização. Profissionalismo e confidencialidade para garantir credibilidade em cada detalhe.
           </p>
 
         <a

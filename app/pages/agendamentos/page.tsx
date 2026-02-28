@@ -20,34 +20,34 @@ type Servico = {
 
 const servicos: Servico[] = [
   {
-    nome: "Xerox Preto & Branco e Colorido",
-    descricao: "Cópias rápidas e nítidas para documentos em geral.",
-    icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
+    nome: "DETRAN IDENTIDADE/CNH",
+    descricao: "Agendamento para emissão de 2ª via de identidade e CNH, garantindo praticidade e segurança para você resolver tudo em um só lugar.",
+    icon: <Image src="/img/detran.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "Impressão Preto & Branco e Colorido",
-    descricao: "Impressão de arquivos PDF, Word, contratos e documentos.",
-    icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
+    nome: "INSS",
+    descricao: "Agendamento INSS.",
+    icon: <Image src="/img/inss.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "Impressão Certificado - OffSET 180g",
-    descricao: "Ideal para certificados, convites e documentos especiais.",
-    icon: <Image src="/img/certificado.png" alt="Xerox" width={150} height={40} />,
+    nome: "Receita Federal",
+    descricao: "Agendamento para emissão de 2ª via do título de eleitor.",
+    icon: <Image src="/img/receitafederal.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "Impressão De Fotografia",
-    descricao: "Impressão de fotos em alta qualidade.",
-    icon: <Image src="/img/fotografia.png" alt="Xerox" width={150} height={40} />,
+    nome: "Auxílio Desemprego",
+    descricao: "Agendamento para solicitação de auxílio desemprego.",
+    icon: <Image src="/img/auxiliodesemprego.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "Impressão de Adesivo",
-    descricao: "Perfeito para etiquetas e embalagens de produtos.",
-    icon: <Image src="/img/adesivo.png" alt="Xerox" width={150} height={40} />,
+    nome: "Policia Federal",
+    descricao: "Agendamento para emissão de passaporte e outros serviços relacionados à Polícia Federal.",
+    icon: <Image src="/img/antecedentescriminais.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "FOTO 3/4 - 6 FOTOS",
-    descricao: "Perfeito para documentos que exigem fotos em tamanho 3/4.",
-    icon: <Image src="/img/34.png" alt="Xerox" width={150} height={40} />,
+    nome: "CADRIO - CRAS",
+    descricao: "Agendamento para inscrição no Cadastro Único (CADÚnico) e outros serviços relacionados ao CRAS, facilitando o acesso a benefícios sociais e programas governamentais.",
+    icon: <Image src="/img/cadunico.png" alt="Xerox" width={200} height={40} />,
   },
 ];
 
@@ -144,10 +144,10 @@ export default function ImpressaoPage() {
         {/* HERO CONTENT */}
         <div className="max-w-4xl mx-auto text-center px-6 py-16">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            Xerox e Impressões Rápidas e Profissionais
+            AGENDAMENTOS
           </h1>
           <p className="text-1xl md:text-xl mb-2">
-            Xerox e impressões profissionais com qualidade impecável em qualquer papel ou gramatura — do sulfite ao fotográfico, adesivo ou certificado — garantindo cores vivas, definição nítida e um acabamento que transmite credibilidade em cada detalhe.
+            Agende seus serviços com rapidez e segurança, sem enfrentar filas ou perder tempo. Realizamos agendamentos para 2ª via de Identidade, CNH, Seguro-Desemprego, CadÚnico (CRAS), Receita Federal, INSS, Detran e muito mais, garantindo orientação completa em cada etapa. Resolva tudo com organização, agilidade e o suporte de quem entende dos procedimentos.
           </p>
 
         <a

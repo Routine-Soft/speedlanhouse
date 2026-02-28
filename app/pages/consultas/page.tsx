@@ -20,34 +20,24 @@ type Servico = {
 
 const servicos: Servico[] = [
   {
-    nome: "Xerox Preto & Branco e Colorido",
-    descricao: "Cópias rápidas e nítidas para documentos em geral.",
-    icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
+    nome: "SPC/SERASA",
+    descricao: "Consulta ao SPC e Serasa para CPF ou CNPJ, ideal para quem precisa verificar restrições financeiras, dívidas, protestos e ações judiciais.",
+    icon: <Image src="/img/serasa.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "Impressão Preto & Branco e Colorido",
-    descricao: "Impressão de arquivos PDF, Word, contratos e documentos.",
-    icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
+    nome: "INSS",
+    descricao: "Emissão de extrato do INSS, ideal para quem precisa comprovar contribuições previdenciárias ou verificar o histórico de benefícios.",
+    icon: <Image src="/img/inss.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "Impressão Certificado - OffSET 180g",
-    descricao: "Ideal para certificados, convites e documentos especiais.",
-    icon: <Image src="/img/certificado.png" alt="Xerox" width={150} height={40} />,
+    nome: "Rio Previdência",
+    descricao: "Emissão de extrato do Rio Previdência, ideal para quem precisa comprovar contribuições previdenciárias ou verificar o histórico de benefícios para servidores públicos do Rio de Janeiro.",
+    icon: <Image src="/img/rioprevidencia.png" alt="Xerox" width={200} height={40} />,
   },
   {
-    nome: "Impressão De Fotografia",
-    descricao: "Impressão de fotos em alta qualidade.",
-    icon: <Image src="/img/fotografia.png" alt="Xerox" width={150} height={40} />,
-  },
-  {
-    nome: "Impressão de Adesivo",
-    descricao: "Perfeito para etiquetas e embalagens de produtos.",
-    icon: <Image src="/img/adesivo.png" alt="Xerox" width={150} height={40} />,
-  },
-  {
-    nome: "FOTO 3/4 - 6 FOTOS",
-    descricao: "Perfeito para documentos que exigem fotos em tamanho 3/4.",
-    icon: <Image src="/img/34.png" alt="Xerox" width={150} height={40} />,
+    nome: "GOV",
+    descricao: "Emissão de certidões e documentos oficiais, ideal para quem precisa de comprovações para processos judiciais, administrativos ou pessoais.",
+    icon: <Image src="/img/gov.png" alt="Xerox" width={200} height={40} />,
   },
 ];
 
@@ -144,10 +134,10 @@ export default function ImpressaoPage() {
         {/* HERO CONTENT */}
         <div className="max-w-4xl mx-auto text-center px-6 py-16">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            Xerox e Impressões Rápidas e Profissionais
+            CONSULTAS
           </h1>
           <p className="text-1xl md:text-xl mb-2">
-            Xerox e impressões profissionais com qualidade impecável em qualquer papel ou gramatura — do sulfite ao fotográfico, adesivo ou certificado — garantindo cores vivas, definição nítida e um acabamento que transmite credibilidade em cada detalhe.
+            A consulta ao SPC e Serasa é a maneira mais segura de analisar o histórico financeiro de CPF ou CNPJ nas principais bases de proteção ao crédito do país, identificando restrições, dívidas, protestos, ações judiciais e score de crédito que podem impactar diretamente a liberação de crédito, financiamento e seus negócios.
           </p>
 
         <a
