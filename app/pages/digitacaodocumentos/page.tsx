@@ -20,7 +20,12 @@ type Servico = {
 
 const servicos: Servico[] = [
   {
-    nome: "SCANNER / DIGITAÇÃO",
+    nome: "SCANNER",
+    descricao: "Digitalização de documentos, fotos e arquivos em alta qualidade.",
+    icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
+  },
+  {
+    nome: "DIGITAÇÃO",
     descricao: "Digitalização de documentos, fotos e arquivos em alta qualidade.",
     icon: <Image src="/img/impressora1.png" alt="Xerox" width={150} height={40} />,
   },
@@ -62,16 +67,26 @@ export default function ImpressaoPage() {
     }
   }, []);
 
+  const criarMensagemOrcamento = () => {
+  const mensagem = `Olá *Central de Serviços - Speed Lan House ${emojiDevice}!*
+
+Estou vindo através do site de vocês e gostaria de solicitar um orçamento.`;
+
+  return encodeURIComponent(mensagem);
+};
+
   const criarMensagem = (servicoNome: string) => {
-    const mensagem = `Olá, Speed Lan House ${emojiDevice}. Quero o serviço: ${servicoNome}`;
+  const mensagem = `Olá, *Central de Serviços Speed Lan House ${emojiDevice}!*
+
+Estou vindo através do site de vocês e gostaria de solicitar um orçamento para ${servicoNome}`;
     return encodeURIComponent(mensagem);
-  };
+};
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-orange-400 to-orange-900">
+    <div className="min-h-screen bg-gradient-to-r from-indigo-900 via-indigo-500 to-orange-600 text-white">
 
             {/* HERO */}
-      <section className="relative w-full bg-gradient-to-r from-purple-700 via-purple-600 to-orange-500 text-white">
+      <section className="relative w-full bg-gradient-to-r from-indigo-900 via-indigo-500 to-orange-600 text-white">
 
         {/* NAVBAR */}
         <header className="max-w-7xl mx-auto px-6 py-6">
@@ -103,35 +118,34 @@ export default function ImpressaoPage() {
 
             {/* MENU DESKTOP */}
             <nav className="hidden md:flex items-center gap-8 text-lg">
-              <Link href="#" className="hover:text-orange-300 transition">Início</Link>
-              <Link href="#" className="hover:text-orange-300 transition">Serviços</Link>
-              <Link href="#" className="hover:text-orange-300 transition">Contato</Link>
-              <a 
-                href="https://wa.me/5521992013095?text=Eu%20quero%20contratar%20um%20servi%C3%A7o."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-indigo-900 hover:bg-indigo-800 px-5 py-2 rounded-lg shadow-md transition"
-              >
-                Solicite seu orçamento
-              </a>
+              <Link href="/" className="hover:text-orange-300 transition">Início</Link>
+              <Link href="/nossosservicos" className="hover:text-orange-300 transition">Serviços</Link>
+<a 
+  href={`https://wa.me/5521992013095?text=${criarMensagemOrcamento()}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-indigo-900 hover:bg-indigo-800 px-5 py-2 rounded-lg shadow-md transition"
+>
+  Solicite seu orçamento
+</a>
             </nav>
           </div>
 
           {/* MENU MOBILE */}
+{/* MENU MOBILE */}
           {menuOpen && (
             <nav className="md:hidden mt-6 flex flex-col gap-4 text-lg bg-white text-indigo-800 p-6 rounded-xl shadow-lg">
-              <Link href="#" onClick={() => setMenuOpen(false)}>Início</Link>
-              <Link href="#" onClick={() => setMenuOpen(false)}>Serviços</Link>
-              <Link href="#" onClick={() => setMenuOpen(false)}>Contato</Link>
+              <Link href="/" onClick={() => setMenuOpen(false)}>Início</Link>
+              <Link href="/nossosservicos" onClick={() => setMenuOpen(false)}>Serviços</Link>
 
-              <a 
-                href="https://wa.me/5521992013095?text=Eu%20quero%20contratar%20um%20servi%C3%A7o."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-indigo-900 text-white px-5 py-2 rounded-lg shadow-md text-center"
-              >
-                Solicite seu orçamento
-              </a>
+<a 
+  href={`https://wa.me/5521992013095?text=${criarMensagemOrcamento()}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-indigo-900 text-white px-5 py-2 rounded-lg shadow-md text-center"
+>
+  Solicite seu orçamento
+</a>
             </nav>
           )}
         </header>
@@ -146,7 +160,7 @@ export default function ImpressaoPage() {
           </p>
 
         <a
-          href="https://wa.me/5521992013095?text=Eu%20quero%20contratar%20um%20servi%C3%A7o."
+          href={`https://wa.me/5521992013095?text=${criarMensagemOrcamento()}`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-400 px-8 py-4 text-xl rounded-lg font-semibold shadow-lg transition"
@@ -174,26 +188,21 @@ export default function ImpressaoPage() {
         </div>
       </section>
 
-      {/* BENEFÍCIOS */}
-      <section className="bg-indigo-800 text-white py-4">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-center gap-8 text-center font-medium">
-          <div>10 anos transformando burocracia em soluções</div>
-        </div>
-      </section>
 
-      {/* SERVIÇOS */}
-      <section className="py-20 px-6 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-indigo-800 mb-14">
+
+            {/* SERVIÇOS */}
+      <section className="py-20 px-6 max-w-7xl mx-auto bg-gradient-to-r from-indigo-900 via-indigo-500 to-orange-600 text-white">
+        <h2 className="text-3xl font-bold text-center text-white mb-14">
           Nossos Serviços
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 items-stretch">
           {servicos.map((servico, index) => (
             
             <div
-              key={index}
-              className="bg-white rounded-xl shadow-xl p-6 text-center hover:shadow-2xl transition"
-            >
+                key={index}
+                className="bg-white rounded-xl shadow-xl p-6 text-center hover:shadow-2xl transition flex flex-col"
+              >
               {/* ÍCONE */}
               <div className="flex justify-center mb-4">
                 {servico.icon}
@@ -211,7 +220,7 @@ export default function ImpressaoPage() {
                 href={`https://wa.me/5521992013095?text=${criarMensagem(servico.nome)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white px-5 py-2 rounded-lg shadow-md transition font-semibold"
+                className="mt-auto inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white px-5 py-2 rounded-lg shadow-md transition font-semibold justify-center"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -229,7 +238,7 @@ export default function ImpressaoPage() {
       </section>
 
       {/* CHAMADA FINAL */}
-      <section className=" py-20 px-6">
+      <section className=" py-20 px-6 bg-gradient-to-r from-indigo-900 via-indigo-500 to-orange-600 text-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
           <div>
@@ -240,6 +249,10 @@ export default function ImpressaoPage() {
             <p className="text-white text-lg mb-8 leading-relaxed">
               Envie seu arquivo pelo <span className="font-semibold text-green-600">WhatsApp </span> 
               e retire pronto na unidade ou consulte valores rapidamente.
+            </p>
+
+            <p className="mb-3 font-semibold">
+              Segunda a Sabado das 8h as 22h
             </p>
 
             <ul className="space-y-4">
@@ -291,6 +304,19 @@ export default function ImpressaoPage() {
                 <span className="font-medium text-white">Serviço rápido e sem burocracia</span>
               </li>
             </ul>
+
+            <div className="py-6">
+              <p className="text-white text-sm">
+                Atendimento por e-mail:
+              </p>
+
+              <a
+                href="mailto:sac@speedlanhouse.com.br"
+                className="text-lg font-semibold text-white hover:text-orange-500 transition"
+              >
+                sac@speedlanhouse.com.br
+              </a>
+            </div>
 
             {/* SOCIAL */}
             <div className="flex gap-4 mt-6 justify-center md:justify-start">
@@ -354,14 +380,12 @@ export default function ImpressaoPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-gray-900 text-white text-center py-6">
+      <footer className="bg-gradient-to-r from-indigo-900 via-indigo-500 to-orange-600 text-white text-center py-6">
         © 2026 Speed Lan House: Todos os direitos reservados.
       </footer>
 
       <a
-  href={`https://wa.me/5521992013095?text=${encodeURIComponent(
-    "Olá, Speed Lan House. Eu preciso de ajuda."
-  )}`}
+  href={`https://wa.me/5521992013095?text=${criarMensagemOrcamento()}`}
   target="_blank"
   rel="noopener noreferrer"
   className="fixed bottom-6 right-6 group z-50"

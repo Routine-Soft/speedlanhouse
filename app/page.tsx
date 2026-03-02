@@ -1,16 +1,51 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import React from "react";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [emojiDevice, setEmojiDevice] = useState("");
+
+  React.useEffect(() => {
+  const userAgent = navigator.userAgent;
+
+  if (/mobile/i.test(userAgent)) {
+      setEmojiDevice("📱");
+    } else if (/tablet|ipad/i.test(userAgent)) {
+      setEmojiDevice("📲");
+    } else {
+      setEmojiDevice("");
+    }
+  }, []);
+
+    const criarMensagemOrcamento = () => {
+  const mensagem = `Olá *Central de Serviços - Speed Lan House ${emojiDevice}!*
+
+Estou vindo através do site de vocês e gostaria de solicitar um orçamento.`;
+
+  return encodeURIComponent(mensagem);
+};
+
   return (
     <main className="min-h-screen w-full font-sans bg-white">
 
       {/* HERO */}
-      <section className="relative w-full bg-gradient-to-r from-purple-700 via-purple-600 to-orange-500 text-white">
+    <section className="relative w-full text-white overflow-hidden">
+  
+        {/* IMAGEM DE FUNDO */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/img/loja.jpeg')" }}
+        />
+
+        {/* OVERLAY ESCURO PARA MELHORAR LEITURA */}
+        <div className="absolute inset-0 bg-black/80" />
+
+        {/* CONTEÚDO */}
+        <div className="relative z-10">
 
         {/* NAVBAR */}
         <header className="max-w-7xl mx-auto px-6 py-6">
@@ -47,14 +82,14 @@ export default function Home() {
 
 
 
-              <a 
-                href="https://wa.me/5521992013095?text=Eu%20quero%20contratar%20um%20servi%C3%A7o."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-indigo-900 hover:bg-indigo-800 px-5 py-2 rounded-lg shadow-md transition"
-              >
-                Solicite seu orçamento
-              </a>
+            <a 
+              href={`https://wa.me/5521992013095?text=${criarMensagemOrcamento()}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-indigo-900 hover:bg-indigo-800 px-5 py-2 rounded-lg shadow-md transition"
+            >
+              Solicite seu orçamento
+            </a>
             </nav>
           </div>
 
@@ -66,7 +101,7 @@ export default function Home() {
               <Link href="/contato" onClick={() => setMenuOpen(false)} className="hover:text-indigo-600 transition">Contato</Link>
 
               <a 
-                href="https://wa.me/5521992013095?text=Eu%20quero%20contratar%20um%20servi%C3%A7o."
+                href={`https://wa.me/5521992013095?text=${criarMensagemOrcamento()}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-indigo-900 text-white px-5 py-2 rounded-lg shadow-md text-center"
@@ -90,7 +125,7 @@ export default function Home() {
           </p>
 
         <a
-          href="https://wa.me/5521992013095?text=Eu%20quero%20contratar%20um%20servi%C3%A7o."
+          href={`https://wa.me/5521992013095?text=${criarMensagemOrcamento()}`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-400 px-8 py-4 text-xl rounded-lg font-semibold shadow-lg transition"
@@ -116,10 +151,11 @@ export default function Home() {
           Chamar no WhatsApp
         </a>
         </div>
+        </div>
       </section>
 
       {/* BENEFÍCIOS */}
-      <section className="bg-indigo-800 text-white py-4">
+      <section className="bg-gradient-to-r from-indigo-900 via-indigo-500 to-orange-600 text-white py-4">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-center gap-8 text-center font-medium">
           <div>✔ Atendimento rápido</div>
           <div>✔ Serviços essenciais</div>
@@ -128,9 +164,9 @@ export default function Home() {
       </section>
 
       {/* SERVIÇOS */}
-      <section className="py-16 bg-gray-100">
+      <section className="py-16 bg-gradient-to-r from-indigo-900 via-indigo-500 to-orange-600 text-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-center text-3xl font-bold mb-12 text-indigo-800">
+          <h2 className="text-center text-3xl font-bold mb-12 text-white">
             Nossos Serviços
           </h2>
 
@@ -219,7 +255,7 @@ export default function Home() {
       </section>
 
       {/* CONTATO */}
-       <section className=" items-center bg-gradient-to-r from-purple-700 to-orange-500 text-white py-16">
+       <section className=" items-center bg-gradient-to-r from-indigo-900 via-indigo-500 to-orange-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
 
           {/* INFO */}
@@ -232,11 +268,15 @@ export default function Home() {
               WhatsApp: (21) 99201-3095
             </p>
 
+            <p className="mb-3 font-semibold">
+              Segunda a Sabado das 8h as 22h
+            </p>
+
             <ul className="space-y-3 text-sm">
               {[
                 "Estrada Santa Eugênia 1715",
                 "Rua Apurana N 16 Loja 1A",
-                "Rua M, Lote 23 Quadra 07 - Pitscos",
+                "Rua M, Lote 23 Quadra 07 - Pitocos",
                 "Rua Georgina da Silva N23 - Cesarinho - Paciência",
               ].map((address, i) => (
                 <li key={i} className="flex items-start gap-2">
@@ -322,7 +362,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-gray-100 text-center py-6 text-sm text-gray-600">
+      <footer className="bg-gradient-to-r from-indigo-900 via-indigo-500 to-orange-600 text-white text-center py-6 text-sm text-gray-600">
         © 2026 Speed Lan House. Todos os direitos reservados.
       </footer>
 
