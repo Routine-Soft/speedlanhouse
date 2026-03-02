@@ -99,10 +99,10 @@ Estou vindo através do site de vocês e gostaria de solicitar um orçamento par
 
             {/* LOGO */}
             <div className="flex items-center gap-3">
-              <Image
+                            <Image
                 src="/img/logo.png"
                 alt="SpeedLan House"
-                width={100}
+                width={130}
                 height={70}
               />
               <div className="text-2xl font-bold tracking-wide">
