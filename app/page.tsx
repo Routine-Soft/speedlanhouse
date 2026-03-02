@@ -55,12 +55,12 @@ Estou vindo através do site de vocês e gostaria de solicitar um orçamento.`;
             <div className="flex items-center gap-3">
               <Image
                 src="/img/logo.png"
-                alt="SpeedLan House"
+                alt="SPEED LAN House"
                 width={130}
                 height={70}
               />
               <div className="text-2xl font-bold tracking-wide">
-                SPEEDLAN <span className="text-orange-300">HOUSE</span>
+                SPEED LAN <span className="text-orange-300">HOUSE</span>
               </div>
             </div>
 
@@ -115,7 +115,7 @@ Estou vindo através do site de vocês e gostaria de solicitar um orçamento.`;
         {/* HERO CONTENT */}
         <div className="max-w-4xl mx-auto text-center px-6 py-16">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            Central de Serviços SpeedLan House
+            Central de Serviços SPEED LAN House
           </h1>
           <p className="text-1xl md:text-xl mb-2">
             Somos uma empresa especializada em serviços essenciais para o dia a dia, há mais de 10 anos transformando burocracia em soluções rápidas, seguras e eficientes. Construímos nossa autoridade com o compromisso de resolver tudo em um único lugar como xerox, impressão, consultas completas, agendamentos, 2º via de documentos, currículos profissionais e serviços digitais. Entre em contato com nossa equipe que nós transformaremos seu problema em solução!

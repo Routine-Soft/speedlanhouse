@@ -96,12 +96,12 @@ Estou vindo através do site de vocês e gostaria de solicitar um orçamento par
             <div className="flex items-center gap-3">
                             <Image
                 src="/img/logo.png"
-                alt="SpeedLan House"
+                alt="SPEED LAN House"
                 width={130}
                 height={70}
               />
               <div className="text-2xl font-bold tracking-wide">
-                SPEEDLAN <span className="text-orange-300">HOUSE</span>
+                SPEED LAN <span className="text-orange-300">HOUSE</span>
               </div>
             </div>
 
@@ -310,10 +310,10 @@ Estou vindo através do site de vocês e gostaria de solicitar um orçamento par
               </p>
 
               <a
-                href="mailto:sac@speedlanhouse.com.br"
+                href="mailto:sac@SPEED LANhouse.com.br"
                 className="text-lg font-semibold text-white hover:text-orange-500 transition"
               >
-                sac@speedlanhouse.com.br
+                sac@SPEED LANhouse.com.br
               </a>
             </div>
 
@@ -370,7 +370,7 @@ Estou vindo através do site de vocês e gostaria de solicitar um orçamento par
 
         {/* MAPA */}
         <iframe
-          title="Mapa SpeedLan"
+          title="Mapa SPEED LAN"
           src="https://www.google.com/maps?q=23585430&output=embed"
           className="w-full h-80 rounded-xl shadow-xl"
           loading="lazy"
