@@ -147,7 +147,7 @@ Estou vindo através do site de vocês e gostaria de solicitar um orçamento par
           {menuOpen && (
             <nav className="md:hidden mt-6 flex flex-col gap-4 text-lg bg-white text-indigo-800 p-6 rounded-xl shadow-lg">
               <Link href="/" onClick={() => setMenuOpen(false)}>Início</Link>
-              <Link href="/nossosservicos" onClick={() => setMenuOpen(false)}>Serviços</Link>
+              <Link href="/pages/nossosservicos" onClick={() => setMenuOpen(false)}>Serviços</Link>
 
 <a 
   href={`https://wa.me/5521992013095?text=${criarMensagemOrcamento()}`}

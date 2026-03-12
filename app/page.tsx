@@ -97,7 +97,7 @@ Estou vindo através do site de vocês e gostaria de solicitar um orçamento.`;
           {menuOpen && (
             <nav className="md:hidden mt-6 flex flex-col gap-4 text-lg bg-white text-indigo-800 p-6 rounded-xl shadow-lg">
               <Link href="/" onClick={() => setMenuOpen(false)} className="hover:text-indigo-600 transition">Início</Link>
-              <Link href="/servicos" onClick={() => setMenuOpen(false)} className="hover:text-indigo-600 transition">Serviços</Link>
+              <Link href="/pages/nossosservicos" onClick={() => setMenuOpen(false)} className="hover:text-indigo-600 transition">Serviços</Link>
               <Link href="/contato" onClick={() => setMenuOpen(false)} className="hover:text-indigo-600 transition">Contato</Link>
 
               <a 
