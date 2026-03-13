@@ -254,7 +254,7 @@ Estou vindo através do site de vocês e gostaria de solicitar um orçamento par
             </p>
 
             <p className="mb-3 font-semibold">
-              Segunda a Sabado das 8h as 22h
+              De segunda a sábado, das 8h às 22h.
             </p>
 
             <ul className="space-y-4">
