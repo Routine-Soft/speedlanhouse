@@ -67,6 +67,28 @@ const servicos: Servico[] = [
 ];
 
 export default function ImpressaoPage() {
+  const [activeLocation, setActiveLocation] = useState(0)
+  const [mapUrl, setMapUrl] = useState(
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4329.9882914567725!2d-43.635658299999996!3d-22.931459500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9be5e6af49aa4f%3A0x5a8baf9b4addaba9!2sCentral%20de%20Servi%C3%A7os%20-%20Speed%20Lan%20House!5e1!3m2!1spt-PT!2sbr!4v1773507186172!5m2!1spt-PT!2sbr"
+  );
+  const locations = [
+    {
+      address: "Loja Santa Eugênia - Estrada Santa Eugênia 1715",
+      map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4329.9882914567725!2d-43.635658299999996!3d-22.931459500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9be5e6af49aa4f%3A0x5a8baf9b4addaba9!2sCentral%20de%20Servi%C3%A7os%20-%20Speed%20Lan%20House!5e1!3m2!1spt-PT!2sbr!4v1773507186172!5m2!1spt-PT!2sbr",
+    },
+    {
+      address: "Loja Aporuna - Varandas - Rua Apurana N 16 Loja 1A",
+      map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4329.519971171725!2d-43.6401743!3d-22.9461029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bfb472c57eae5%3A0x7fa37caf0542106c!2sCENTRAL%20DE%20SERVI%C3%87OS%20-%20SPEED%20LAN%20HOUSE!5e1!3m2!1spt-PT!2sbr!4v1773506845948!5m2!1spt-PT!2sbr",
+    },
+    {
+      address: "Loja Pitocos - Rua M, Lote 23 Quadra 07 - Pitocos",
+      map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4329.842178406444!2d-43.632929499999996!3d-22.9360291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9be5bb5a119183%3A0xb6ebf165b550ff7e!2sCentral%20de%20Servi%C3%A7os-Speed%20Lan%20House!5e1!3m2!1spt-PT!2sbr!4v1773507080765!5m2!1spt-PT!2sbr",
+    },
+    {
+      address: "Loja Cesarinho - Rua Georgina da Silva N23 - Cesarinho - Paciência",
+      map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4330.381834019561!2d-43.6365276!3d-22.919147400000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9be564b31fa91f%3A0x7ce4b0a24c73de06!2sCENTRAL%20DE%20SERVI%C3%87OS%20-%20SPEED%20LAN%20HOUSE!5e1!3m2!1spt-BR!2sbr!4v1773507234739!5m2!1spt-BR!2sbr",
+    },
+  ];
   const [menuOpen, setMenuOpen] = useState(false)
   const [emojiDevice, setEmojiDevice] = useState("");
 
@@ -282,6 +304,30 @@ Estou vindo através do site de vocês e gostaria de solicitar um orçamento par
               De segunda a sábado, das 8h às 22h.
             </p>
 
+            <ul className="space-y-3 text-sm pb-6">
+              {locations.map((location, i) => (
+                <li
+                  key={i}
+                  onClick={() => setActiveLocation(i)}
+                  className={`flex items-start gap-2 cursor-pointer transition 
+                  ${activeLocation === i 
+                    ? "text-orange-300 font-semibold" 
+                    : "hover:text-orange-300"}`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5 text-red-600 mt-0.5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/>
+                  </svg>
+
+                  <span>{location.address}</span>
+                </li>
+              ))}
+            </ul>
+
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-gray-700">
                 <div className="w-6 h-6 flex items-center justify-center bg-green-500 rounded-full">
@@ -396,13 +442,17 @@ Estou vindo através do site de vocês e gostaria de solicitar um orçamento par
           </div>
         </div>
 
-        {/* MAPA */}
-        <iframe
-          title="Mapa SPEED LAN"
-          src="https://www.google.com/maps?q=23585430&output=embed"
-          className="w-full h-80 rounded-xl shadow-xl"
-          loading="lazy"
-        />
+{/* MAPA */}
+          <div className="rounded-xl overflow-hidden shadow-lg h-72">
+            <iframe
+              src={locations[activeLocation].map}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </section>
 
